@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ALMG.DIGITAL</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='16' fill='%23123b36'/%3E%3Crect x='13' y='13' width='16' height='16' rx='4.5' fill='%23f3f1ea'/%3E%3Crect x='35' y='13' width='16' height='16' rx='4.5' fill='%23f3f1ea' opacity='.5'/%3E%3Crect x='13' y='35' width='16' height='16' rx='4.5' fill='%23f3f1ea' opacity='.5'/%3E%3Crect x='35' y='35' width='16' height='16' rx='8' fill='%236e0d17'/%3E%3C/svg%3E">
-<meta name="description" content="Ferramentas feitas por servidor, para servidores da ALMG: controle de frequência, conferência do MATE, calendário e painéis.">
+<meta name="description" content="Ferramentas para servidores da ALMG: controle de frequência, calendário, conferência do MATE e painéis.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://almg.digital/">
 <meta property="og:title" content="ALMG.DIGITAL">
-<meta property="og:description" content="Ferramentas feitas por servidor, para servidores da ALMG: controle de frequência, conferência do MATE, calendário e painéis.">
+<meta property="og:description" content="Ferramentas para servidores da ALMG: controle de frequência, calendário, conferência do MATE e painéis.">
 <meta property="og:image" content="https://almg.digital/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -33,37 +33,38 @@ a{color:inherit}
 footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between}
 footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 
-.top .in{padding-block:22px 56px;display:grid;gap:34px}
-h1{font-family:var(--f-display);font-weight:800;font-size:clamp(32px,5.6vw,52px);line-height:1.04;margin:0;text-wrap:balance;max-width:16ch}
+body{background:var(--red);min-height:100vh;display:flex;flex-direction:column}
+.stage{flex:1;display:grid;place-items:center;padding-block:clamp(20px,6vh,64px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.card{width:100%;max-width:820px;background:var(--paper);color:var(--green);border-radius:22px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.04);padding:clamp(22px,4vw,40px);display:grid;gap:26px}
+.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.bar{color:var(--green)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,4.4vw,38px);line-height:1.06;margin:0;text-wrap:balance}
 h1 em{font-style:normal;color:var(--red)}
-.lead{margin:14px 0 0;color:#4d5552;font-size:16.5px;max-width:58ch}
-main .in{padding-block:28px 48px;display:grid;gap:26px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.group{display:grid;gap:10px}
+.group h2{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0;display:flex;align-items:center;gap:10px}
+.group h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 @media (max-width:640px){.grid{grid-template-columns:1fr}}
-.app{position:relative;display:grid;grid-template-columns:auto 1fr;gap:14px 16px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 1px 3px rgba(18,59,54,.06);text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
-.app .tile{width:52px;height:52px}
-.app h2{font-family:var(--f-display);font-weight:700;font-size:20px;margin:0 0 2px}
-.url{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
-.app p{grid-column:1/-1;margin:0;color:var(--muted);font-size:14px}
-.tag{position:absolute;top:16px;right:16px;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px}
-.live .tag{background:var(--red);color:#fff} .soon .tile,.soon h2,.soon p,.soon .url{opacity:.7} .soon .tag{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
-a.app:hover{transform:translateY(-2px);border-color:var(--c)} a.app:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.app{position:relative;display:grid;grid-template-columns:auto 1fr;gap:12px 14px;align-items:start;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s,box-shadow .15s}
+.app .tile{width:48px;height:48px}
+.app h3{font-family:var(--f-display);font-weight:700;font-size:19px;margin:0 0 2px}
+.url{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.app p{grid-column:1/-1;margin:0;color:var(--muted);font-size:13.5px}
+.tag{position:absolute;top:14px;right:14px;font-family:var(--f-mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px}
+.live .tag{background:var(--red);color:#fff} .soon .tile,.soon h3,.soon p,.soon .url{opacity:.6} .soon .tag{background:var(--paper);color:var(--muted);border:1px solid var(--line)}
+a.app:hover{transform:translateY(-2px);border-color:var(--c);box-shadow:0 8px 20px -10px rgba(18,59,54,.35)} a.app:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.app{transition:none}a.app:hover{transform:none}}
+.foot{color:#f1d6d9;font-size:12px;text-align:center;padding:0 16px 22px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px}
+.foot a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .card{color:var(--green)}}
 </style>
 </head>
 <body>
-<header class="top"><div class="in">
-<a class="bar" href="/" aria-label="ALMG.DIGITAL, início"><svg viewBox="0 0 64 64" class="mk" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#123b36"/><rect x="13" y="13" width="16" height="16" rx="4.5" fill="#f3f1ea"/><rect x="35" y="13" width="16" height="16" rx="4.5" fill="#f3f1ea" opacity=".5"/><rect x="13" y="35" width="16" height="16" rx="4.5" fill="#f3f1ea" opacity=".5"/><rect x="35" y="35" width="16" height="16" rx="8" fill="#6e0d17"/></svg><span class="wm"><b>ALMG</b><i>.</i><span>DIGITAL</span></span></a>
-<div><h1>Ferramentas do dia a dia na <em>Assembleia</em></h1><p class="lead">Feitas por servidor, para servidores. Cada ferramenta no seu próprio endereço, e nada do que você lança sai do seu navegador.</p></div>
-</div></header>
-<main><div class="in">
-<section class="grid" aria-label="Ferramentas">
-<a class="app live" href="https://ponto.almg.digital" style="--c:#8c1c2e"><svg class="tile" width="52" height="52" viewBox="0 0 64 64" style="--c:#8c1c2e" aria-hidden="true"><rect width="64" height="64" rx="17.2" fill="#8c1c2e"/><path d="M32 54C16 43 8 34 8 23.5 8 15.5 14 10 21 10c4.6 0 8.6 2.3 11 6 2.4-3.7 6.4-6 11-6 7 0 13 5.5 13 13.5C56 34 48 43 32 54z" fill="#fff"/><path d="M12 31h10l3.5-7 5 15 4.5-11 2.5 3H52" fill="none" stroke="var(--c)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><h2>Ponto</h2><span class="url">ponto.almg.digital</span></div><p>Controle de frequência e banco de horas. Cole as marcações da IntraALMG e veja o saldo e a hora de saída.</p><span class="tag">no ar</span></a>
-<div class="app soon" style="--c:#1f5f4a" aria-disabled="true"><svg class="tile" width="52" height="52" viewBox="0 0 64 64" style="--c:#1f5f4a" aria-hidden="true"><rect width="64" height="64" rx="17.2" fill="#1f5f4a"/><path d="M29 8h6v5h5v5h-5v4h-6v-4h-5v-5h5z" fill="#fff"/><path d="M22 24h20l-3 14h-14z" fill="#fff"/><path d="M24 40h16l3 8H21z" fill="#fff"/><rect x="16" y="50" width="32" height="6" rx="2" fill="#fff"/></svg><div><h2>MATE</h2><span class="url">mate.almg.digital</span></div><p>Conferência das matérias em tramitação, separada da planilha.</p><span class="tag">em breve</span></div>
-<div class="app soon" style="--c:#5b3a8c" aria-disabled="true"><svg class="tile" width="52" height="52" viewBox="0 0 64 64" style="--c:#5b3a8c" aria-hidden="true"><rect width="64" height="64" rx="17.2" fill="#5b3a8c"/><rect x="10" y="14" width="44" height="40" rx="5" fill="#fff"/><rect x="10" y="14" width="44" height="11" rx="5" fill="#fff" opacity=".6"/><rect x="19" y="9" width="5" height="10" rx="2.5" fill="#fff"/><rect x="40" y="9" width="5" height="10" rx="2.5" fill="#fff"/><g fill="var(--c)"><rect x="17" y="31" width="7" height="6" rx="1.5"/><rect x="28.5" y="31" width="7" height="6" rx="1.5"/><rect x="40" y="31" width="7" height="6" rx="1.5"/><rect x="17" y="41" width="7" height="6" rx="1.5"/><rect x="28.5" y="41" width="7" height="6" rx="1.5"/></g></svg><div><h2>Calendário</h2><span class="url">calendario.almg.digital</span></div><p>O calendário da Casa, interativo: feriados, recessos e emendas.</p><span class="tag">em breve</span></div>
-<div class="app soon" style="--c:#1f4e8c" aria-disabled="true"><svg class="tile" width="52" height="52" viewBox="0 0 64 64" style="--c:#1f4e8c" aria-hidden="true"><rect width="64" height="64" rx="17.2" fill="#1f4e8c"/><rect x="12" y="34" width="9" height="20" rx="2" fill="#fff"/><rect x="27.5" y="22" width="9" height="32" rx="2" fill="#fff"/><rect x="43" y="12" width="9" height="42" rx="2" fill="#fff"/></svg><div><h2>Painel</h2><span class="url">painel.almg.digital</span></div><p>Painéis estatísticos e acompanhamento do MATE.</p><span class="tag">em breve</span></div>
-</section>
-<footer><span>Iniciativa independente de um servidor da Assembleia Legislativa de Minas Gerais. Sem vínculo oficial com a ALMG.</span><a href="https://almg.digital/marca">Guia da marca</a></footer>
+<main class="stage"><div class="card">
+<div class="cardhead"><a class="bar" href="/" aria-label="ALMG.DIGITAL, início"><svg viewBox="0 0 64 64" class="mk" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#123b36"/><rect x="13" y="13" width="16" height="16" rx="4.5" fill="#f3f1ea"/><rect x="35" y="13" width="16" height="16" rx="4.5" fill="#f3f1ea" opacity=".5"/><rect x="13" y="35" width="16" height="16" rx="4.5" fill="#f3f1ea" opacity=".5"/><rect x="35" y="35" width="16" height="16" rx="8" fill="#6e0d17"/></svg><span class="wm"><b>ALMG</b><i>.</i><span>DIGITAL</span></span></a></div>
+<h1>Ferramentas do dia a dia na <em>Assembleia</em></h1>
+<section class="group" aria-label="Para todos os servidores"><h2>Para todos os servidores</h2><div class="grid"><a class="app live" href="https://ponto.almg.digital" style="--c:#8c1c2e"><svg class="tile" width="48" height="48" viewBox="0 0 64 64" style="--c:#8c1c2e" aria-hidden="true"><rect width="64" height="64" rx="18.7" fill="#8c1c2e"/><path d="M32 54C16 43 8 34 8 23.5 8 15.5 14 10 21 10c4.6 0 8.6 2.3 11 6 2.4-3.7 6.4-6 11-6 7 0 13 5.5 13 13.5C56 34 48 43 32 54z" fill="#fff"/><path d="M12 31h10l3.5-7 5 15 4.5-11 2.5 3H52" fill="none" stroke="var(--c)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><h3>Ponto</h3><span class="url">ponto.almg.digital</span></div><p>Controle de frequência e banco de horas. Cole as marcações da IntraALMG e veja o saldo e a hora de saída.</p><span class="tag">no ar</span></a><div class="app soon" style="--c:#5b3a8c" aria-disabled="true"><svg class="tile" width="48" height="48" viewBox="0 0 64 64" style="--c:#5b3a8c" aria-hidden="true"><rect width="64" height="64" rx="18.7" fill="#5b3a8c"/><rect x="10" y="14" width="44" height="40" rx="5" fill="#fff"/><rect x="10" y="14" width="44" height="11" rx="5" fill="#fff" opacity=".6"/><rect x="19" y="9" width="5" height="10" rx="2.5" fill="#fff"/><rect x="40" y="9" width="5" height="10" rx="2.5" fill="#fff"/><g fill="var(--c)"><rect x="17" y="31" width="7" height="6" rx="1.5"/><rect x="28.5" y="31" width="7" height="6" rx="1.5"/><rect x="40" y="31" width="7" height="6" rx="1.5"/><rect x="17" y="41" width="7" height="6" rx="1.5"/><rect x="28.5" y="41" width="7" height="6" rx="1.5"/></g></svg><div><h3>Calendário</h3><span class="url">calendario.almg.digital</span></div><p>O calendário da Casa, interativo: feriados, recessos e emendas.</p><span class="tag">em breve</span></div></div></section><section class="group" aria-label="Gerência de Gestão Arquivística"><h2>Gerência de Gestão Arquivística</h2><div class="grid"><div class="app soon" style="--c:#1f5f4a" aria-disabled="true"><svg class="tile" width="48" height="48" viewBox="0 0 64 64" style="--c:#1f5f4a" aria-hidden="true"><rect width="64" height="64" rx="18.7" fill="#1f5f4a"/><path d="M29 8h6v5h5v5h-5v4h-6v-4h-5v-5h5z" fill="#fff"/><path d="M22 24h20l-3 14h-14z" fill="#fff"/><path d="M24 40h16l3 8H21z" fill="#fff"/><rect x="16" y="50" width="32" height="6" rx="2" fill="#fff"/></svg><div><h3>MATE</h3><span class="url">mate.almg.digital</span></div><p>Conferência das matérias em tramitação, separada da planilha.</p><span class="tag">em breve</span></div><div class="app soon" style="--c:#1f4e8c" aria-disabled="true"><svg class="tile" width="48" height="48" viewBox="0 0 64 64" style="--c:#1f4e8c" aria-hidden="true"><rect width="64" height="64" rx="18.7" fill="#1f4e8c"/><rect x="12" y="34" width="9" height="20" rx="2" fill="#fff"/><rect x="27.5" y="22" width="9" height="32" rx="2" fill="#fff"/><rect x="43" y="12" width="9" height="42" rx="2" fill="#fff"/></svg><div><h3>Painel</h3><span class="url">painel.almg.digital</span></div><p>Painéis estatísticos e acompanhamento do MATE.</p><span class="tag">em breve</span></div></div></section>
 </div></main>
+<div class="foot"><span>Iniciativa independente de um servidor da ALMG. Sem vínculo oficial com a Assembleia.</span><a href="https://almg.digital/marca">Guia da marca</a></div>
 </body>
 </html>
