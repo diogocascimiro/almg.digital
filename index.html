@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ALMG.DIGITAL</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='16' fill='%236e0d17'/%3E%3Crect x='13' y='13' width='16' height='16' rx='4.5' fill='%23fff'/%3E%3Crect x='35' y='13' width='16' height='16' rx='4.5' fill='%23fff' opacity='.5'/%3E%3Crect x='13' y='35' width='16' height='16' rx='4.5' fill='%23fff' opacity='.5'/%3E%3Crect x='35' y='35' width='16' height='16' rx='8' fill='%23f4c9cd'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='64' height='64' rx='16' fill='%23123b36'/%3E%3Crect x='13' y='13' width='16' height='16' rx='4.5' fill='%23f3f1ea'/%3E%3Crect x='35' y='13' width='16' height='16' rx='4.5' fill='%23f3f1ea' opacity='.5'/%3E%3Crect x='13' y='35' width='16' height='16' rx='4.5' fill='%23f3f1ea' opacity='.5'/%3E%3Crect x='35' y='35' width='16' height='16' rx='8' fill='%236e0d17'/%3E%3C/svg%3E">
 <meta name="description" content="Ferramentas feitas por servidor, para servidores da ALMG: controle de frequência, conferência do MATE, calendário e painéis.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://almg.digital/">
@@ -15,10 +15,10 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#6e0d17">
+<meta name="theme-color" content="#f3f1ea">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-/* ALMG.DIGITAL — tokens da marca (V5b: vinho, verde-pedra e papel) */
+/* ALMG.DIGITAL — tokens da marca (V5a: papel, verde-pedra e vinho) */
 :root{--red:#6e0d17;--green:#123b36;--paper:#f3f1ea;--rose:#f4c9cd;--card:#fff;--ink:#123b36;--muted:#5d625f;--line:#dcd8cf;--bg:#f3f1ea;
  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#101615;--card:#18201e;--ink:#eef0ec;--muted:#a3aba7;--line:#2c3532;color-scheme:dark}}
@@ -27,17 +27,17 @@
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
 a{color:inherit}
 .in{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.top{background:var(--red);color:#fff}
-.bar{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#fff} .mk{width:42px;height:42px;flex:none}
-.wm{font-family:var(--f-display);font-size:23px;white-space:nowrap} .wm b{font-weight:800} .wm i{font-style:normal;font-weight:800;color:var(--rose)} .wm span{font-weight:500;letter-spacing:.06em}
+.top{background:var(--paper);color:var(--green);border-bottom:1px solid var(--line)}
+.bar{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--green)} .mk{width:42px;height:42px;flex:none}
+.wm{font-family:var(--f-display);font-size:23px;white-space:nowrap} .wm b{font-weight:800} .wm i{font-style:normal;font-weight:800;color:var(--red)} .wm span{font-weight:500;letter-spacing:.06em}
 footer{color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between}
 footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 
-.top .in{padding-block:22px 64px;display:grid;gap:34px}
+.top .in{padding-block:22px 56px;display:grid;gap:34px}
 h1{font-family:var(--f-display);font-weight:800;font-size:clamp(32px,5.6vw,52px);line-height:1.04;margin:0;text-wrap:balance;max-width:16ch}
-h1 em{font-style:normal;color:var(--rose)}
-.lead{margin:14px 0 0;opacity:.85;font-size:16.5px;max-width:58ch}
-main .in{padding-block:0 48px;margin-top:-34px;display:grid;gap:26px}
+h1 em{font-style:normal;color:var(--red)}
+.lead{margin:14px 0 0;color:#4d5552;font-size:16.5px;max-width:58ch}
+main .in{padding-block:28px 48px;display:grid;gap:26px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 @media (max-width:640px){.grid{grid-template-columns:1fr}}
 .app{position:relative;display:grid;grid-template-columns:auto 1fr;gap:14px 16px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 1px 3px rgba(18,59,54,.06);text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
@@ -53,7 +53,7 @@ a.app:hover{transform:translateY(-2px);border-color:var(--c)} a.app:focus-visibl
 </head>
 <body>
 <header class="top"><div class="in">
-<a class="bar" href="/" aria-label="ALMG.DIGITAL, início"><svg viewBox="0 0 64 64" class="mk" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#fff"/><rect x="13" y="13" width="16" height="16" rx="4.5" fill="#6e0d17"/><rect x="35" y="13" width="16" height="16" rx="4.5" fill="#6e0d17" opacity=".5"/><rect x="13" y="35" width="16" height="16" rx="4.5" fill="#6e0d17" opacity=".5"/><rect x="35" y="35" width="16" height="16" rx="8" fill="#123b36"/></svg><span class="wm"><b>ALMG</b><i>.</i><span>DIGITAL</span></span></a>
+<a class="bar" href="/" aria-label="ALMG.DIGITAL, início"><svg viewBox="0 0 64 64" class="mk" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#123b36"/><rect x="13" y="13" width="16" height="16" rx="4.5" fill="#f3f1ea"/><rect x="35" y="13" width="16" height="16" rx="4.5" fill="#f3f1ea" opacity=".5"/><rect x="13" y="35" width="16" height="16" rx="4.5" fill="#f3f1ea" opacity=".5"/><rect x="35" y="35" width="16" height="16" rx="8" fill="#6e0d17"/></svg><span class="wm"><b>ALMG</b><i>.</i><span>DIGITAL</span></span></a>
 <div><h1>Ferramentas do dia a dia na <em>Assembleia</em></h1><p class="lead">Feitas por servidor, para servidores. Cada ferramenta no seu próprio endereço, e nada do que você lança sai do seu navegador.</p></div>
 </div></header>
 <main><div class="in">
